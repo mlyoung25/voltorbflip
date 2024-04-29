@@ -6,7 +6,7 @@ module.exports = {
     titleTemplate: `%s | Voltorb Flip`,
     description: ``,
     author: `Brandon Stein`,
-    siteUrl: `https://steiner26.github.io/voltorbflip`,
+    siteUrl: `https://mlyoung25.github.io/voltorbflip`,
     image: `/Social-Share.png`, // This path refers to the static folder
   },
   plugins: [
@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://steiner26.github.io/voltorbflip`,
-        sitemap: `https://steiner26.github.io/voltorbflip/sitemap.xml`,
+        host: `https://mlyoung25.github.io/voltorbflip`,
+        sitemap: `https://mlyoung25.github.io/voltorbflip/sitemap.xml`,
       },
     },
     `gatsby-plugin-react-helmet`,
