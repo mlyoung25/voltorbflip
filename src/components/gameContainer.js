@@ -15,7 +15,7 @@ class GameContainer extends React.Component {
     this.state = {
       prevLevel: 1,
       level: 1,
-      totalCoins: 0,
+      totalCoins: (JSON.parse(localStorage.getItem('totalCoins')) || 0),
       currentCoins: 0,
       flippedtiles: 0,
       maxCoins: 1,
@@ -205,6 +205,7 @@ class GameContainer extends React.Component {
           prevState.totalCoins + prevState.currentCoins,
           99999
         )
+        localStorage.setItem('totalCoins', JSON.stringify(this.totalCoins));
         newState.currentCoins = 0
         newstate.flippedtiles = 0
         const { board, maxCoins } = createBoard(level)
