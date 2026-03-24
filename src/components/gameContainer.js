@@ -41,8 +41,8 @@ class GameContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.currentCoins !== this.state.currentCoins) {
-      // this.updateStorage()
+    if (prevState !== this.state) {
+      this.updateStorage()
     }
     if (
       this.state.status === states.GAME &&
@@ -157,10 +157,12 @@ class GameContainer extends React.Component {
         const value = tile.value
         if (value) {
           newState.currentCoins = (prevState.currentCoins || 1) * value
-          newstate.flippedtiles += 1
+          if (value > 1) {
+            newState.flippedtiles = prevState.flippedtiles + 1
+          }
         } else {
           newState.currentCoins = 0
-          newstate.flippedtiles = 0
+          newState.flippedtiles = 0
           newState.status = states.GAMELOST
           newState.cursor = {}
         }
@@ -205,9 +207,8 @@ class GameContainer extends React.Component {
           prevState.totalCoins + prevState.currentCoins,
           99999
         )
-        localStorage.setItem('totalCoins', JSON.stringify(this.totalCoins));
         newState.currentCoins = 0
-        newstate.flippedtiles = 0
+        newState.flippedtiles = 0
         const { board, maxCoins } = createBoard(level)
         newState.board = board
         newState.maxCoins = maxCoins
@@ -218,6 +219,8 @@ class GameContainer extends React.Component {
         const level = levelDown(prevState.flippedtiles, prevState.level)
         newState.level = level
         newState.prevLevel = prevState.level
+        newState.currentCoins = 0
+        newState.flippedtiles = 0
         const { board, maxCoins } = createBoard(level)
         newState.board = board
         newState.maxCoins = maxCoins

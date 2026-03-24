@@ -2,10 +2,10 @@ import React from "react"
 import styles from "../styles/components/tile.module.scss"
 import classNames from "classnames/bind"
 
-import Memo0 from "../images/icons/memo-0.svg"
-import Memo1 from "../images/icons/memo-1.svg"
-import Memo2 from "../images/icons/memo-2.svg"
-import Memo3 from "../images/icons/memo-3.svg"
+import Memo0 from "../images/icons/memo-0.svg?react"
+import Memo1 from "../images/icons/memo-1.svg?react"
+import Memo2 from "../images/icons/memo-2.svg?react"
+import Memo3 from "../images/icons/memo-3.svg?react"
 
 const cx = classNames.bind(styles)
 

@@ -1,11 +1,11 @@
 import React from "react"
 import styles from "../styles/components/memo.module.scss"
 
-import MemoX from "../images/icons/memo-x.svg"
-import MemoVoltorb from "../images/icons/large-voltorb.svg"
-import Memo1 from "../images/icons/large-1.svg"
-import Memo2 from "../images/icons/large-2.svg"
-import Memo3 from "../images/icons/large-3.svg"
+import MemoX from "../images/icons/memo-x.svg?react"
+import MemoVoltorb from "../images/icons/large-voltorb.svg?react"
+import Memo1 from "../images/icons/large-1.svg?react"
+import Memo2 from "../images/icons/large-2.svg?react"
+import Memo3 from "../images/icons/large-3.svg?react"
 
 import classNames from "classnames/bind"
 

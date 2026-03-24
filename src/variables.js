@@ -76,5 +76,5 @@ function relative(x, n) {
 }
 
 export function levelDown(flippedtiles, level) {
-  return max(level-flippedtiles,1)
+  return Math.max(Math.min(level, flippedtiles), 1)
 }
