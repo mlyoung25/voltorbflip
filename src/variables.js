@@ -75,6 +75,6 @@ function relative(x, n) {
   return -Math.sqrt(x) + Math.sqrt(n) + 1
 }
 
-export function levelDown(flippedtiles, level) {
-  return Math.max(Math.min(level, flippedtiles), 1)
+export function levelDown(level, remainingSpecialTiles) {
+  return Math.max(1, level - remainingSpecialTiles)
 }

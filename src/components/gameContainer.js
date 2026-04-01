@@ -216,7 +216,17 @@ class GameContainer extends React.Component {
         newState.status = states.NEWLEVEL
         this.timer = setTimeout(this.startGame, 2000)
       } else if (prevState.status === states.FLIPLOST) {
-        const level = levelDown(prevState.flippedtiles, prevState.level)
+        const remainingSpecialTiles = prevState.board.reduce(
+          (count, row) =>
+            count +
+            row.reduce(
+              (rowCount, tile) =>
+                rowCount + (tile.value > 1 && !tile.flipped ? 1 : 0),
+              0
+            ),
+          0
+        )
+        const level = levelDown(prevState.level, remainingSpecialTiles)
         newState.level = level
         newState.prevLevel = prevState.level
         newState.currentCoins = 0
